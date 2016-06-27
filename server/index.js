@@ -21,7 +21,7 @@ const
   appPort = 1337,
   maxAge = 16 * 60 * 1000,
   cachedLiveDates = {},
-  randomNames = [ 'David Bowie', 'Max von Sydow', 'Arnold Schwarzenegger', 'Lemmy Kilmister' ],
+  randomNames = [ 'David Bowie', 'Max von Sydow', 'Arnold Schwarzenegger', 'Lemmy' ],
 
   app = express();
 

@@ -16,7 +16,7 @@
     <form>
       Is <input value="{name}"> still alive <button>?</button>
     </form>
-    <p><small>Some things ...</small></p>
+    <p><small>BEERWARE LICENSE - Source Code <a href="https://github.com/ta2edchimp/still-alive-app">on GitHub</a> &amp; <a href="/_src">on zeit.co</a></small></p>
     <script>
       !function( f, i ) {
         f.addEventListener( 'submit', function ( e ) {

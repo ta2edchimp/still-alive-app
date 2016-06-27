@@ -2,6 +2,8 @@
 
 A macabre little web app to look up whether your youth's heroes are still alive 😕
 
+[the web app](https://still-alive-app-fpceqkqsii.now.sh/) - [the cli tool](https://www.npmjs.com/package/still-alive-app)
+
 ## what the ... ?
 
 Yeah sure, I know, it really is macabre ... but as all the heroes (be it musicians, actors, writers ...) of my friends' and my own youth disappear, there was the idea to make this little web app.

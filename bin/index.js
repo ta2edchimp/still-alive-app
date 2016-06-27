@@ -13,7 +13,7 @@
 
 const
   { getLiveDates } = require( '../lib/index' ),
-  randomNames = [ 'David Bowie', 'Max von Sydow', 'Arnold Schwarzenegger', 'Lemmy Kilmister' ],
+  randomNames = [ 'David Bowie', 'Max von Sydow', 'Arnold Schwarzenegger', 'Lemmy' ],
   queryName = getQueryName();
 
 function getQueryName() {
