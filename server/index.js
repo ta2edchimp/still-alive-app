@@ -13,10 +13,9 @@
 
 
 const
-  fs = require( 'fs' ),
   express = require( 'express' ),
-  dust = require( 'dustjs-linkedin' ),
   { getLiveDates } = require( '../lib/index' ),
+  { getDefaultView } = require( './views/index' ),
 
   appPort = 1337,
   maxAge = 16 * 60 * 1000,
@@ -71,42 +70,14 @@ function renderOutput( res, name ) {
 
       console.log( `Is ${ name } still alive? ${ answer }` );
 
-      dust.render( 'default', { name, answer }, ( error, renderResult ) => {
-        if ( error ) {
-          res.send( JSON.stringify( error, null, '\t' ) );
-        } else {
-          res.send( renderResult );
-        }
-      } );
+      res.send( getDefaultView( { name, answer } ) );
     } )
     .catch( ( reason ) => {
       console.log( `Something went wrong for ${ name }:`, reason );
 
-      dust.render(
-        'default',
-        { name, answer: reason.message || reason },
-        ( error, renderResult ) => {
-          if ( error ) {
-            res.send( JSON.stringify( error, null, '\t' ) );
-          } else {
-            res.send( renderResult );
-          }
-        }
-      );
+      res.send( getDefaultView( { name, answer: reason.message || reason } ) );
     } );
 }
-
-function loadTemplates() {
-  const
-    tplSrc = fs.readFileSync( './server/views/default.dust', 'utf8' ),
-    tpl = dust.compile( tplSrc, 'default' );
-
-  dust.loadSource( tpl );
-
-  console.log( 'dust.templates loaded & precompiled' );
-}
-
-loadTemplates();
 
 app.get( [ '/', '/random', '/last', '/latest', 'favicon.ico' ], ( req, res ) => {
   renderOutput( res, getQueryName() );
