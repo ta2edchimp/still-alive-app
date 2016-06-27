@@ -2,7 +2,7 @@
 
 A macabre little web app to look up whether your youth's heroes are still alive 😕
 
-[the web app](https://still-alive-app-fpceqkqsii.now.sh/) - [the cli tool](https://www.npmjs.com/package/still-alive-app)
+[the web app](https://still-alive-app-qvamgdepfn.now.sh/) - [the cli tool](https://www.npmjs.com/package/still-alive-app)
 
 ## what the ... ?
 
