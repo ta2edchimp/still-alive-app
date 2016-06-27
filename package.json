@@ -1,0 +1,25 @@
+{
+  "name": "still-alive-app",
+  "version": "1.0.0",
+  "description": "A macabre little web app to look up whether your youth's heroes are still alive 😕",
+  "main": "lib/index.js",
+  "bin": {
+    "still-alive": "bin/index.js"
+  },
+  "scripts": {
+    "test": "eslint ."
+  },
+  "keywords": [],
+  "author": "Andreas Windt <email@andreaswindt.com> (http://andreaswindt.com/)",
+  "license": "beerware",
+  "dependencies": {
+    "dustjs-linkedin": "2.7.2",
+    "express": "4.14.0",
+    "node-fetch": "1.5.3"
+  },
+  "devDependencies": {
+    "eslint": "2.13.1",
+    "eslint-config-idiomatic": "2.1.0",
+    "eslint-config-ta2edchimp": "1.1.1"
+  }
+}
