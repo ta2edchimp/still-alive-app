@@ -21,7 +21,7 @@ const
   appPort = 1337,
   maxAge = 16 * 60 * 1000,
   cachedLiveDates = {},
-  randomNames = [ 'David Bowie', 'Max von Sydow', 'Arnold Schwarzenegger', 'Lemmy' ],
+  randomStartupNames = [ 'David Bowie', 'Max von Sydow', 'Arnold Schwarzenegger', 'Lemmy' ],
 
   app = express();
 
@@ -30,7 +30,11 @@ function getQueryName() {
     return process.argv.splice( 2 ).join( ' ' );
   }
 
-  return cachedLiveDates[ '@lastQueried' ] || randomNames[ Math.round( Math.random() * randomNames.length ) ]; // eslint-disable-line id-match
+  const
+    allNames = Object.keys( cachedLiveDates ).filter( ( name ) => name !== '@lastQueried' ),
+    randomName = allNames.length > 0 ? allNames[ Math.round( Math.random() * allNames.length ) ] : '';
+
+  return randomName || randomStartupNames[ Math.round( Math.random() * randomStartupNames.length ) ]; // eslint-disable-line id-match
 }
 
 function proxyGetLiveDates( name ) {
@@ -104,12 +108,14 @@ function loadTemplates() {
 
 loadTemplates();
 
-app.get( [ '/', '/random', '/last', '/latest' ], ( req, res ) => {
+app.get( [ '/', '/random', '/last', '/latest', 'favicon.ico' ], ( req, res ) => {
   renderOutput( res, getQueryName() );
 } );
 
 app.get( /(\/[\s\S]*?)/, ( req, res ) => {
-  renderOutput( res, decodeURIComponent( req.url.replace( /^\//, '' ) ) );
+  const name = req.url.replace( /^\//, '' ).replace( /\+/ig, ' ' );
+
+  renderOutput( res, decodeURIComponent( name ) );
 } );
 
 app.listen( appPort );
