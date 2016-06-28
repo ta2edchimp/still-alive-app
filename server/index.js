@@ -79,7 +79,7 @@ function renderOutput( res, name ) {
     } );
 }
 
-app.get( [ '/', '/random', '/last', '/latest', 'favicon.ico' ], ( req, res ) => {
+app.get( [ '/', '/random', '/last', '/latest', '/favicon.ico' ], ( req, res ) => {
   renderOutput( res, getQueryName() );
 } );
 
