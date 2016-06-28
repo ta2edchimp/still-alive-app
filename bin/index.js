@@ -26,11 +26,11 @@ function getQueryName() {
 
 getLiveDates( queryName )
   .then( ( result ) => {
-    console.log( '\n\t' + queryName + ':\n' );
-    console.log( '\tBirth ..:  ' + ( result.born ? result.birthDate.toString() : 'unborn' ) );
-    console.log( '\tDeath ..:  ' + ( result.died ? result.deathDate.toString() : 'still living' ) + '\n' );
-    console.log( '\nIs ' + result.name + ' still living? ' + ( !result.died ? 'Yes!' : 'No.' ) + '\n' );
+    console.log( `\n\t${queryName}:\n` );
+    console.log( `\tBirth ..:  ${result.born ? result.birthDate.toString() : 'unborn'}` );
+    console.log( `\tDeath ..:  ${result.died ? result.deathDate.toString() : 'still living'}\n` );
+    console.log( `\nIs ${result.name} still living? ${!result.died ? 'Yes!' : 'No.'}\n` );
   } )
   .catch( ( reason ) => {
-    console.log( '\nIs ' + queryName + ' still living? ' + ( reason.message || reason ) + '\n' );
+    console.log( `\nIs ${queryName} still living? ' ${reason.message || reason}\n` );
   } );
