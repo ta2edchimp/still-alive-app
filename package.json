@@ -1,6 +1,6 @@
 {
   "name": "still-alive-app",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A macabre little web app to look up whether your youth's heroes are still alive 😕",
   "main": "lib/index.js",
   "bin": {
