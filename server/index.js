@@ -31,9 +31,9 @@ function getQueryName() {
 
   const
     allNames = Object.keys( cachedLiveDates ).filter( ( name ) => name !== '@lastQueried' ),
-    randomName = allNames.length > 0 ? allNames[ Math.round( Math.random() * allNames.length ) ] : '';
+    randomName = allNames.length > 0 ? allNames[ Math.round( Math.random() * ( allNames.length - 1 ) ) ] : '';
 
-  return randomName || randomStartupNames[ Math.round( Math.random() * randomStartupNames.length ) ]; // eslint-disable-line id-match
+  return randomName || randomStartupNames[ Math.round( Math.random() * ( randomStartupNames.length - 1 ) ) ]; // eslint-disable-line id-match
 }
 
 function proxyGetLiveDates( name ) {
