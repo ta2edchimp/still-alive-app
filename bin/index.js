@@ -32,5 +32,5 @@ getLiveDates( queryName )
     console.log( `\tIs ${result.name} still living? ${!result.died ? 'Yes!' : 'No.'}\n` );
   } )
   .catch( ( reason ) => {
-    console.log( `\n\tIs ${queryName} still living? ' ${reason.message || reason}\n` );
+    console.log( `\n\tIs ${queryName} still living? ${reason.message || reason}\n` );
   } );
