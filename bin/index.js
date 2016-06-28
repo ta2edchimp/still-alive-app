@@ -29,8 +29,8 @@ getLiveDates( queryName )
     console.log( `\n\t${queryName}:\n` );
     console.log( `\tBirth ..:  ${result.born ? result.birthDate.toDateString() : 'unborn'}` );
     console.log( `\tDeath ..:  ${result.died ? result.deathDate.toDateString() : 'still living'}\n` );
-    console.log( `\nIs ${result.name} still living? ${!result.died ? 'Yes!' : 'No.'}\n` );
+    console.log( `\tIs ${result.name} still living? ${!result.died ? 'Yes!' : 'No.'}\n` );
   } )
   .catch( ( reason ) => {
-    console.log( `\nIs ${queryName} still living? ' ${reason.message || reason}\n` );
+    console.log( `\n\tIs ${queryName} still living? ' ${reason.message || reason}\n` );
   } );
