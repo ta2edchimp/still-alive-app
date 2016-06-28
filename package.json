@@ -14,7 +14,6 @@
   "author": "Andreas Windt <email@andreaswindt.com> (http://andreaswindt.com/)",
   "license": "beerware",
   "dependencies": {
-    "dustjs-linkedin": "2.7.2",
     "express": "4.14.0",
     "node-fetch": "1.5.3"
   },
