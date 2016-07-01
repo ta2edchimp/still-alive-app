@@ -79,7 +79,9 @@ function renderOutput( res, name ) {
     } );
 }
 
-app.get( [ '/', '/random', '/last', '/latest', '/favicon.ico' ], ( req, res ) => {
+app.use( express.static( 'server/static' ) );
+
+app.get( [ '/', '/random', '/last', '/latest' ], ( req, res ) => {
   renderOutput( res, getQueryName() );
 } );
 
