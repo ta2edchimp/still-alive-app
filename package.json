@@ -10,9 +10,19 @@
     "start": "node ./server/index.js",
     "test": "eslint ."
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ta2edchimp/still-alive-app.git"
+  },
+  "keywords": [
+    "alive", "dead", "died", "people"
+  ],
   "author": "Andreas Windt <email@andreaswindt.com> (http://andreaswindt.com/)",
   "license": "beerware",
+  "bugs": {
+    "url": "https://github.com/ta2edchimp/still-alive-app/issues"
+  },
+  "homepage": "https://still-alive.now.sh/",
   "dependencies": {
     "express": "4.14.0",
     "node-fetch": "1.5.3"
