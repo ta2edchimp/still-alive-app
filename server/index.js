@@ -41,7 +41,7 @@ function proxyGetLiveDates( name ) {
     now = Date.now(),
     cachedResult = cachedLiveDates[ name ];
 
-  if ( cachedResult && cachedResult.timestamp > ( now - maxAge ) ) {
+  if ( cachedResult && ( cachedResult.timestamp > ( now - maxAge ) || cachedResult.died ) ) {
     return new Promise( ( resolve ) => {
       cachedLiveDates[ '@lastQueried' ] = name;
       console.log( `Look ma: no network request for ${ name }! (came from cache)` );
