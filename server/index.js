@@ -81,6 +81,10 @@ function renderOutput( res, name ) {
 
 app.use( express.static( 'server/static' ) );
 
+app.get( '/_json', ( req, res ) => {
+  res.json( cachedLiveDates );
+} );
+
 app.get( [ '/', '/random', '/last', '/latest' ], ( req, res ) => {
   renderOutput( res, getQueryName() );
 } );
