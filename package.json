@@ -1,6 +1,6 @@
 {
   "name": "still-alive-app",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A macabre little web app to look up whether your youth's heroes are still alive 😕",
   "main": "lib/index.js",
   "bin": {
@@ -15,7 +15,10 @@
     "url": "https://github.com/ta2edchimp/still-alive-app.git"
   },
   "keywords": [
-    "alive", "dead", "died", "people"
+    "alive",
+    "dead",
+    "died",
+    "people"
   ],
   "author": "Andreas Windt <email@andreaswindt.com> (http://andreaswindt.com/)",
   "license": "beerware",
